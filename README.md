@@ -30,6 +30,6 @@ The entry point for a user is a website which is available under the address: **
 
 * Secret mangement using tool liks hashicorp vault,aws secret manager or any secret management tool to secure database credentials
 
-* Implementation of ingress for route base routing for application accessibility  in the  kubernetes cluster that has ingress controller
+* Implementation of ingress for route base routing for application accessibility  in the  kubernetes cluster that a ingress controller
 
 
