@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kanban-ui
+  labels:
+    app: kanban-ui
+    group: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kanban-ui
+  template:
+    metadata:
+      labels:
+        app: kanban-ui
+        group: frontend
+    spec:
+      containers:
+        - name: kanban-ui
+          image: "bbw4luv/devop_project:kanban-frontend"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kanban-ui
+  labels: 
+    group: frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: kanban-ui
+  ports:
+    - port: 80
+      targetPort: 80
+
