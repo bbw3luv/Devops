@@ -11,15 +11,15 @@ Made of 3 separate Docker containers that holds and each docker file in kanban-a
 
 ## Run the command below apply the kubernetes manifest file 
 ```bash
-$ kubectl apply -f kanban-ui.yaml 
+$ kubectl apply -f kanban-ui.yml 
 
 ```
 ```bash
-$ kubectl apply -f kanban-app.yaml 
+$ kubectl apply -f kanban-app.yml 
 
 ```
 ```bash
-$ kubectl apply -f postgres.yaml 
+$ kubectl apply -f postgres.yml 
 
 ```
 ## Check to confirm pods are running
