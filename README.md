@@ -22,6 +22,15 @@ $ kubectl apply -f kanban-app.yaml
 $ kubectl apply -f postgres.yaml 
 
 ```
+## Check to confirm pods are running
+
+```bash
+NAME                         READY   STATUS    RESTARTS   AGE
+kanban-app-f646d949d-2ksvs   1/1     Running   0          64m
+kanban-ui-84c7d86b56-z7zrn   1/1     Running   0          120m
+postgres-58f589568c-mf7tf    1/1     Running   0          4h6m
+
+``
 ##
 
 The entry point for a user is a website which is available under the address: **http://localhost:80/**
