@@ -23,10 +23,11 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
-          resources:
-            limits:
-              memory: "256Mi"
-              cpu: "500m"
+          # env:
+          # # resources:
+          # #   limits:
+          # #     memory: "256Mi"
+          # #     cpu: "500m"
 ---
 apiVersion: v1
 kind: Service
@@ -34,8 +35,9 @@ metadata:
   name: kanban-ui
   labels: 
     group: frontend
+    app: kanban-ui
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: kanban-ui
   ports:

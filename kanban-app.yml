@@ -28,12 +28,18 @@ spec:
           env:
             - name: DB_SERVER
               value: postgres
-          resources:
-            limits:
-              memory: "256Mi"
-              cpu: "500m"
+            - name: POSTGRES_DB
+              value: kanban
+            - name: POSTGRES_USER
+              value: kanban
+            - name: POSTGRES_PASSWORD
+              value: kanban
+          # resources:
+          #   limits:
+          #     memory: "256Mi"
+          #     cpu: "500m"
 
----
+
 
 ---
 apiVersion: v1
@@ -42,8 +48,9 @@ metadata:
   name: kanban-app
   labels: 
     group: backend
+    app: kanban-app
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: kanban-app
   ports:
