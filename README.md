@@ -31,8 +31,6 @@ kanban-ui-84c7d86b56-z7zrn   1/1     Running   0          120m
 postgres-58f589568c-mf7tf    1/1     Running   0          4h6m
 
 ``
-##
-
 The entry point for the  website is available under the address: **http://localhost:80/**
 
 ## Note: In a production environment we have to implement 
